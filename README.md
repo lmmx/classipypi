@@ -7,7 +7,7 @@
 
 <!-- [![build status](https://github.com/lmmx/classipypi/actions/workflows/master.yml/badge.svg)](https://github.com/lmmx/classipypi/actions/workflows/master.yml) -->
 
-Transformer model attention in Pydantic.
+Neurosymbolic PyPI package classifier selector.
 
 ## Motivation
 
