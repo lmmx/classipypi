@@ -23,7 +23,7 @@ class SourceConfig(BaseModel):
 
 class SelectorConfig(DisplayConfig, SourceConfig):
     """
-    Configure source and y.
+    Configure input source and output display.
 
       :param query: The query string.
       :param source: The source code.
