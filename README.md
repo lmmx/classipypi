@@ -7,12 +7,12 @@
 
 <!-- [![build status](https://github.com/lmmx/classipypi/actions/workflows/master.yml/badge.svg)](https://github.com/lmmx/classipypi/actions/workflows/master.yml) -->
 
-Neurosymbolic PyPI package classifier selector.
+Neurosymbolic PyPI package 'Trove classifier' selector.
 
 ## Motivation
 
-PyPI classifiers are used in `setup.py` or `pyproject.toml` files to convey to
-PyPI and to potential users the conditions under which the package has been used or tested,
+PyPI 'Trove classifiers' are used in `setup.py` or `pyproject.toml` files to convey to
+PyPI users the conditions under which the package has been used or tested,
 the topic of the software, etc. such as
 
 - `Operating System :: POSIX :: Linux`
