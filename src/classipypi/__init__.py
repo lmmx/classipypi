@@ -1,4 +1,4 @@
-from .clspp import list_tags, select_tags
+from .core import list_tags, select_tags
 
 __version__ = "0.1.2"
 
