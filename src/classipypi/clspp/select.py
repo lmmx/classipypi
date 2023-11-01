@@ -1,4 +1,4 @@
-from .config import SelectorConfig
+from ..interfaces import SelectorConfig
 
 __all__ = ["select_tags"]
 

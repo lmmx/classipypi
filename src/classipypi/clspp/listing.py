@@ -1,4 +1,4 @@
-from .config import ListingConfig
+from ..interfaces import ListingConfig
 
 __all__ = ["list_tags"]
 

@@ -4,9 +4,8 @@ from textwrap import indent
 import defopt
 from pydantic import ValidationError
 
-from .config import ListingConfig, SelectorConfig
-from .listing import list_tags
-from .select import select_tags
+from .clspp import list_tags, select_tags
+from .interfaces import ListingConfig, SelectorConfig
 
 __all__ = ["run_cli"]
 
