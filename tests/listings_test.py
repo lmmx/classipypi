@@ -35,3 +35,38 @@ def test_list_dev_statuses(exclude, expected):
     config = ListingConfig(include=["Development Status"], exclude=exclude)
     tags = list_tags(config)
     assert tags == expected
+
+
+@mark.parametrize(
+    "case_insensitive,search_query,expected",
+    [
+        (
+            False,
+            "search",
+            [
+                "Intended Audience :: Science/Research",
+            ],
+        ),
+        (
+            True,
+            "search",
+            [
+                "Intended Audience :: Science/Research",
+                "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+            ],
+        ),
+        (False, "SeArCh", []),
+        (
+            True,
+            "SeArCh",
+            [
+                "Intended Audience :: Science/Research",
+                "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+            ],
+        ),
+    ],
+)
+def test_list_tags_case_insensitivity(case_insensitive, search_query, expected):
+    config = ListingConfig(include=[search_query], case_insensitive=case_insensitive)
+    tags = list_tags(config)
+    assert tags == expected
