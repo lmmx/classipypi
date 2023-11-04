@@ -31,9 +31,9 @@ def run_cli():
             exc.code = 1
             raise
     else:
-        print(f"Got {config=}")
         match config:
             case SelectorConfig():
+                print(f"Got {config=}")
                 result = select_tags(config)
             case ListingConfig():
                 result = list_tags(config)
