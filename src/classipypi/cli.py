@@ -34,6 +34,7 @@ def run_cli():
         print(f"Got {config=}")
         match config:
             case SelectorConfig():
-                select_tags(config)
+                result = select_tags(config)
             case ListingConfig():
-                list_tags(config)
+                result = list_tags(config)
+        print("\n".join(result))

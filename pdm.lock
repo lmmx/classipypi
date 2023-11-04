@@ -5,7 +5,7 @@
 groups = ["default", "test"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
-content_hash = "sha256:2bb3a52613e19480a31d431d267de0d49b05e9e34fb128e043990ef1e5a16a38"
+content_hash = "sha256:92ace26978a25d61ce8df4368bd359392dc60e05cbb65bc8c779ac94207aa8af"
 
 [[package]]
 name = "annotated-types"
@@ -672,6 +672,15 @@ dependencies = [
 files = [
     {file = "transformers-4.34.1-py3-none-any.whl", hash = "sha256:d06ac09151d7b845e4a4acd6b143a591d946031ee67b4cbb20693b241920ffc0"},
     {file = "transformers-4.34.1.tar.gz", hash = "sha256:1d0258d5a18063b66005bbe1e3276ec5943d9ab4ab47f020db1fd485cc40ea22"},
+]
+
+[[package]]
+name = "trove-classifiers"
+version = "2023.10.18"
+summary = "Canonical source for classifiers on PyPI (pypi.org)."
+files = [
+    {file = "trove-classifiers-2023.10.18.tar.gz", hash = "sha256:2cdfcc7f31f7ffdd57666a9957296089ac72daad4d11ab5005060e5cd7e29939"},
+    {file = "trove_classifiers-2023.10.18-py3-none-any.whl", hash = "sha256:20a3da8e3cb65587cc9f5d5b837bf74edeb480bba9bd8cd4f03ab056d6b06c4c"},
 ]
 
 [[package]]
