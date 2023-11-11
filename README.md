@@ -7,7 +7,7 @@
 
 <!-- [![build status](https://github.com/lmmx/classipypi/actions/workflows/master.yml/badge.svg)](https://github.com/lmmx/classipypi/actions/workflows/master.yml) -->
 
-Neurosymbolic PyPI package 'Trove classifier' selector.
+Neural PyPI package 'Trove classifier' selector.
 
 ## Motivation
 

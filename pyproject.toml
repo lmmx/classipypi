@@ -21,8 +21,6 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
 ]
 dependencies = [
-    "numpy>=1.26",
-    "transformers",
     "pydantic>=2.4.2",
     "defopt",
     "trove-classifiers>=2023.10.18",
@@ -41,8 +39,11 @@ classipypi = "classipypi.cli:run_cli"
 
 [project.optional-dependencies]
 outlines = [
-    "torch>=2.1.0",
+    "datasets>=2.14.6",
+    "numpy>=1.26",
     "outlines>=0.0.9",
+    "torch>=2.1.0",
+    "transformers",
 ]
 [build-system]
 requires = ["pdm-backend"]
