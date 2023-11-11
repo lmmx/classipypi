@@ -40,6 +40,11 @@ Repository = "https://github.com/lmmx/classipypi.git"
 [project.scripts]
 classipypi = "classipypi.cli:run_cli"
 
+[project.optional-dependencies]
+outlines = [
+    "torch>=2.1.0",
+    "outlines>=0.0.9",
+]
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
