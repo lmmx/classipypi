@@ -66,7 +66,38 @@ def test_list_dev_statuses(exclude, expected):
         ),
     ],
 )
-def test_list_tags_case_insensitivity(case_insensitive, search_query, expected):
+def test_list_tags_case_insensitivity_standard(
+    case_insensitive,
+    search_query,
+    expected,
+):
     config = ListingConfig(include=[search_query], case_insensitive=case_insensitive)
     tags = list_tags(config)
     assert tags == expected
+
+
+toml_example_single = """classifiers = [
+    "Intended Audience :: Science/Research",
+]"""
+
+toml_example_double = """classifiers = [
+    "Intended Audience :: Science/Research",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+]"""
+
+
+@mark.parametrize(
+    "case_insensitive,search_query,expected",
+    [
+        (False, "search", toml_example_single),
+        (True, "search", toml_example_double),
+    ],
+)
+def test_list_tags_case_insensitivity_toml(case_insensitive, search_query, expected):
+    config = ListingConfig(
+        include=[search_query],
+        case_insensitive=case_insensitive,
+        toml=True,
+    )
+    tags = list_tags(config)
+    assert tags == [expected]

@@ -1,3 +1,4 @@
+import tomli_w
 from trove_classifiers import sorted_classifiers
 
 from ..interfaces import ListingConfig
@@ -29,4 +30,6 @@ def list_tags(config: ListingConfig) -> list[str]:
                 else (query not in tag)
             )
         ]
+    if config.toml:
+        tags = [tomli_w.dumps({"classifiers": tags}).strip()]
     return tags
