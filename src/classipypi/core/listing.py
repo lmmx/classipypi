@@ -2,12 +2,14 @@ import tomli_w
 from trove_classifiers import sorted_classifiers
 
 from ..interfaces import ListingConfig
+from .tag_trees import nest_tags
 
 __all__ = ["list_tags"]
 
 
 def list_tags(config: ListingConfig) -> list[str]:
     tags = sorted_classifiers
+    # Filtering
     if config.include:
         tags = [
             tag
@@ -30,6 +32,9 @@ def list_tags(config: ListingConfig) -> list[str]:
                 else (query not in tag)
             )
         ]
-    if config.toml:
+    # Presentation
+    if config.group:
+        tags = [nest_tags(tags)]
+    elif config.toml:
         tags = [tomli_w.dumps({"classifiers": tags}).strip()]
     return tags
