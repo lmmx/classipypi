@@ -89,8 +89,8 @@ toml_example_double = """classifiers = [
 @mark.parametrize(
     "case_insensitive,search_query,expected",
     [
-        (False, "search", toml_example_single),
-        (True, "search", toml_example_double),
+        (False, "search", [toml_example_single]),
+        (True, "search", [toml_example_double]),
     ],
 )
 def test_list_tags_case_insensitivity_toml(case_insensitive, search_query, expected):
@@ -100,4 +100,34 @@ def test_list_tags_case_insensitivity_toml(case_insensitive, search_query, expec
         toml=True,
     )
     tags = list_tags(config)
-    assert tags == [expected]
+    assert tags == expected
+
+
+grouped_example_single = """Topic
+  Text Processing
+    Markup
+      HTML"""
+
+grouped_example_multi = """Topic
+  Text Processing
+    Markup
+      HTML
+      LaTeX
+      Markdown
+      SGML
+      VRML
+      XML
+      reStructuredText"""
+
+
+@mark.parametrize(
+    "case_insensitive,search_query,expected",
+    [
+        (False, "Markup :: H", [grouped_example_single]),
+        (True, "Markup", [grouped_example_multi]),
+    ],
+)
+def test_list_tags_output(case_insensitive, search_query, expected):
+    config = ListingConfig(include=[search_query], group=True)
+    tags = list_tags(config)
+    assert tags == expected
