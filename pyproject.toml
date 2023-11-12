@@ -44,6 +44,8 @@ outlines = [
     "outlines>=0.0.9",
     "torch>=2.1.0",
     "transformers",
+    "accelerate>=0.24.1",
+    "bitsandbytes>=0.41.2.post2",
 ]
 [build-system]
 requires = ["pdm-backend"]
@@ -61,7 +63,6 @@ test = [
 name = "PyTorch"
 url = "https://download.pytorch.org/whl/cu118"
 include_packages = ["torch"]
-
 
 [tool.isort]
 known_first_party = ["classipypi"]
