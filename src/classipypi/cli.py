@@ -33,7 +33,6 @@ def run_cli():
     else:
         match config:
             case SelectorConfig():
-                print(f"Got {config=}")
                 result = select_tags(config)
             case ListingConfig():
                 result = list_tags(config)

@@ -10,7 +10,18 @@ def build_nested_dict():
     return defaultdict(build_nested_dict)
 
 
-def nest_tags(tags: list[str]) -> str:
+def defaultdict_to_dict(d):
+    if isinstance(d, defaultdict):
+        # Convert the defaultdict to a regular dict
+        d = dict(d)
+    for key, value in d.items():
+        if isinstance(value, defaultdict):
+            # Recursively process nested defaultdicts
+            d[key] = defaultdict_to_dict(value)
+    return d
+
+
+def nest_tags(tags: list[str], formatted: bool = True) -> str | dict:
     """
     Organize tags into a nested dictionary structure.
     """
@@ -33,4 +44,7 @@ def nest_tags(tags: list[str]) -> str:
                 result += format_nested_tags(sub_dict, level + 1)
         return result
 
-    return format_nested_tags(nested_tags).rstrip("\n")
+    if formatted:
+        return format_nested_tags(nested_tags).rstrip("\n")
+    else:
+        return defaultdict_to_dict(nested_tags)

@@ -36,7 +36,7 @@ def generate_tag_guided_model(model, tags):
     return generate.choice(model, tags)
 
 
-def run_inference(tag_guided_model_generator, descriptions, candidate_tags):
+def run_inference(tag_guided_model_generator, descriptions):
     """
     Runs a series of inferences using the provided generator and descriptions.
     """
@@ -51,7 +51,6 @@ def run_inference(tag_guided_model_generator, descriptions, candidate_tags):
         .strip()
         .replace("\n", " ")
     )
-    tag_list = "\n    ".join(candidate_tags)
     system, user, assistant = "<|system|>", "<|user|>", "<|assistant|>"
     # feature = "intended audience"
     # demo1, expect1 = (
@@ -64,14 +63,26 @@ def run_inference(tag_guided_model_generator, descriptions, candidate_tags):
 
     # If a project is described as {demo2} then its {feature} is {expect2}.
     # """
+    demos = {
+        "Customer Service": "a program to train supermarket staff in how to interact with customers",
+        "Manufacturing": "a floor plan generator for factory designers",
+    }
+    demo_template = (
+        "If a project is described as {description} then its {feature} is {expected}"
+    )
+    demo_text = "\n\n".join(
+        demo_template.format(description=desc, feature=feature, expected=exp)
+        for exp, desc in demos.items()
+    )
+    demo_text = demo_text[0].lower() + demo_text[1:]
     prompt = dedent(
         f"""
     {system}
     You are a Python software project labelling assistant.
 
-    You have the following labels to describe the {feature} of the package:
+    You must use PyPI trove classifier labels to describe the {feature} of the package.
 
-    {tag_list}
+    For example: {demo_text}
 
     {user}
     What label should be given to a project with the following description?
