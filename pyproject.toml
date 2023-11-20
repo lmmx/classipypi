@@ -46,6 +46,8 @@ outlines = [
     "transformers",
     "accelerate>=0.24.1",
     "bitsandbytes>=0.41.2.post2",
+    "protobuf>=4.25.1",
+    "sentencepiece>=0.1.99",
 ]
 [build-system]
 requires = ["pdm-backend"]
