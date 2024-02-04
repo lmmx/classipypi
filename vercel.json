@@ -1,5 +1,5 @@
 {
   "buildCommand": "pdm run mkdocs build",
   "outputDirectory": "site",
-  "installCommand": "python3 --version && python3 -m pip install pdm 'urllib3<2' && pdm install --no-default -dG docs -v && pdm run mkdocs"
+  "installCommand": "python3 --version && python3 -m pip install pdm 'urllib3<2' && pdm install -L docs/reqs/vercel.pdm.lock --no-default -dG docs -v && pdm run mkdocs"
 }
