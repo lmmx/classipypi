@@ -1,5 +1,5 @@
 {
-  "buildCommand": "which python && python --version && python -m pdm run mkdocs build",
+  "buildCommand": "~/micromamba/bin/python --version && ~/micromamba/bin/python -m pdm run mkdocs build",
   "outputDirectory": "site",
   "installCommand": "bash ./docs/deploy.sh"
 }
