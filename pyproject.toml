@@ -17,6 +17,7 @@ classifiers = [
     'Framework :: Pydantic',
     'Framework :: Pydantic :: 2',
     "Programming Language :: Python",
+    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
 ]
@@ -26,7 +27,7 @@ dependencies = [
     "trove-classifiers>=2023.10.18",
     "tomli-w>=1.0.0",
 ]
-requires-python = ">=3.10,<3.12"
+requires-python = ">=3.9,<3.12"
 readme = "README.md"
 license = {text = "MIT"}
 
