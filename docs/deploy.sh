@@ -16,3 +16,5 @@ python --version
 python -m pip install pdm 'urllib3<2'
 pdm install --no-default -dG docs -v
 pdm run mkdocs
+echo "THE LOCATION OF THE PYTHON INTERPRETER IS"
+which python
