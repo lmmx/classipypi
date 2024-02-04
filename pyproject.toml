@@ -38,6 +38,14 @@ Repository = "https://github.com/lmmx/classipypi.git"
 classipypi = "classipypi.cli:run_cli"
 
 [project.optional-dependencies]
+docs = [
+    "mkdocs-macros-plugin>=1.0.5",
+    "mkdocs-material[recommended,imaging]>=9.5.2",
+    "mkdocs-section-index>=0.3.8",
+    "mkdocs>=1.5.3",
+    "mkdocstrings[python]>=0.24.0",
+    "urllib3<2",  # Vercel: https://github.com/squidfunk/mkdocs-material/discussions/6470
+]
 outlines = [
     "datasets>=2.14.6",
     "numpy>=1.26",
