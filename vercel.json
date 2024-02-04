@@ -1,5 +1,5 @@
 {
-  "buildCommand": "~/micromamba/bin/python --version && ~/micromamba/bin/python -m pdm run mkdocs build",
+  "buildCommand": "bash ./docs/vercel/build.sh",
   "outputDirectory": "site",
-  "installCommand": "bash ./docs/deploy.sh"
+  "installCommand": "bash ./docs/vercel/deploy.sh"
 }
