@@ -10,7 +10,7 @@ source ~/.bashrc
 
 # activate the environment and install a new version of Python
 micromamba activate
-micromamba install python=3.12 -c conda-forge -y
+micromamba install python=3.11 -c conda-forge -y
 
 # install the dependencies
 python --version
