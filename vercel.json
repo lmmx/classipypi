@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pdm run mkdocs build",
+  "buildCommand": "python -m pdm run mkdocs build",
   "outputDirectory": "site",
   "installCommand": "bash ./docs/deploy.sh"
 }
