@@ -1,4 +1,5 @@
 """Macros added to jinja namespaces by the mkdocs-macros plugin."""
+
 from __future__ import annotations
 
 from pathlib import Path as _Path
