@@ -57,6 +57,9 @@ outlines = [
     "protobuf>=4.25.1",
     "sentencepiece>=0.1.99",
 ]
+dev = [
+    "pre-commit>=4.1.0",
+]
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
